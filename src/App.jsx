@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from '@emotion/styled';
 import ImgCrypto from './img/imagen-criptos.png';
+import { Form } from './components/Form';
 
 
 // STYLED COMPONENTS
@@ -53,6 +54,8 @@ function App() {
 
       <div>
         <Heading>Cotizador de Criptomonedas al Instante</Heading>
+
+        <Form />
       </div>
       
 
