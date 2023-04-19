@@ -16,6 +16,7 @@ const InputSubmit = styled.input`
     border-radius: 5px;
     transition: background-color .3s ease;
     margin-top: 30px;
+    
     &:hover {
         background-color: #7a7dfe;
         cursor: pointer;
@@ -27,6 +28,8 @@ export const Form = () => {
     const [ cryptos, setCryptos ] = useState( [] );
 
     const [ coin, SelectCoins ] = useSelectCoins('Elige tu Moneda a Cotizar', coins);
+    const [ cryptoCoin, SelectCryptoCoin ] = useSelectCoins('Elige la Criptomoneda', cryptos);
+
 
     useEffect( () => {
         const consultAPI = async () => {
@@ -55,6 +58,7 @@ export const Form = () => {
         <form>
 
             <SelectCoins />
+            <SelectCryptoCoin />
 
             <InputSubmit 
                 type="submit"
