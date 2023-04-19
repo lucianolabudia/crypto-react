@@ -15,3 +15,9 @@ La aplicación se desarrolló utilizando las siguientes tecnologías:
 
 
 [Link para utilizar la APP](https://shimmering-melba-64e499.netlify.app/)
+
+## Imagenes de muestra:
+
+![crypto-react1](https://user-images.githubusercontent.com/59026280/233164816-402c3dbb-63ac-4973-b4a5-b7d655068547.PNG)
+
+![crypto-react2](https://user-images.githubusercontent.com/59026280/233164832-7de31d64-a407-49d9-9cc1-03979f2463b4.PNG)
