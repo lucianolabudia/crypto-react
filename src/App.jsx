@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import ImgCrypto from './img/imagen-criptos.png';
 import { Form } from './components/Form';
 import { Result } from './components/Result';
+import { Spinner } from './components/Spinner';
+
 
 
 // STYLED COMPONENTS
@@ -48,11 +50,16 @@ function App() {
   
   const [ coins, setCoins ] = useState({});
   const [ result, setResult ] = useState({});
+  const [ charging, setCharging ] = useState(false);
 
   useEffect( () => {
     if (Object.keys(coins).length > 0) {
       
       const quoteCrypto = async () => {
+
+        setCharging(true);
+        setResult({});
+
         const { coin, cryptoCoin } = coins
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoCoin}&tsyms=${coin}`
         
@@ -60,6 +67,8 @@ function App() {
         const result = await response.json();
 
         setResult(result.DISPLAY[cryptoCoin][coin]);
+
+        setCharging(false);
       }
 
       quoteCrypto();
@@ -81,6 +90,7 @@ function App() {
           setCoins={setCoins}
         />
 
+        { charging && <Spinner /> }
         { result.PRICE && <Result result={result} /> }
       </div>
       
