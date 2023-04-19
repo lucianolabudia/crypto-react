@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import styled from '@emotion/styled';
 import ImgCrypto from './img/imagen-criptos.png';
 import { Form } from './components/Form';
+import { Result } from './components/Result';
 
 
 // STYLED COMPONENTS
@@ -79,6 +80,8 @@ function App() {
         <Form 
           setCoins={setCoins}
         />
+
+        { result.PRICE && <Result result={result} /> }
       </div>
       
 
